@@ -31,6 +31,8 @@ public class UserRegistration {
             case 5:
             	User_validation.validPassword();
             	break;
+            default:
+            	System.out.println("Invalid choice");
             
         }
     }

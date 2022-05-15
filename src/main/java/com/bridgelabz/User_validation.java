@@ -74,11 +74,12 @@ public class User_validation
        
        public static void validPassword() {
            Scanner scanner = new Scanner(System.in);
-           System.out.print("Enter your mobile number : ");
+           System.out.print("Enter your Password : ");
            String pwd = scanner.nextLine();
            //String regex3 = "^[A-Z a-z 0-9]{8,}$";
            //String regex3="^[A-Z]{1}+[a-z 0-9]{7,}$";
-           String regex3="^[A-Z]{1}+[a-zA-Z]{6}+[0-9]+{1,}$";
+           //String regex3="^[A-Z]{1}+[a-zA-Z]{6}+[0-9]+{1,}$";
+           String regex3="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_-])[a-zA-Z0-9].{8,}$";
            Pattern p3 = Pattern.compile(regex3);
            Matcher m3 = p3.matcher(pwd);
            boolean r3 = m3.matches();
