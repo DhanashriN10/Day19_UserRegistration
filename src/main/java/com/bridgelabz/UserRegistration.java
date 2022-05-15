@@ -8,6 +8,7 @@ public class UserRegistration {
 		final Scanner scanner = new Scanner(System.in);
         System.out.println("Welcoime to User Registeration");
         System.out.println("Enter 1 : to validate First Name ");
+        System.out.println("Enter 2 : to validate Last Name ");
         
         System.out.println("Enter the choice");
         switch (scanner.nextInt())
@@ -15,6 +16,9 @@ public class UserRegistration {
             case 1:
             	User_validation.validFirstName();
                 break;
+            case 2:
+            	User_validation.validLastName();
+            	break;
             
         }
     }
