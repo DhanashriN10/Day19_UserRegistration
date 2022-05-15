@@ -71,4 +71,18 @@ public class User_validation
            else
                System.out.println("Phone number is Invalid");
        }
+       
+       public static void validPassword() {
+           Scanner scanner = new Scanner(System.in);
+           System.out.print("Enter your mobile number : ");
+           String pwd = scanner.nextLine();
+           String regex3 = "^[A-Z a-z 0-9]{8,}$";
+           Pattern p3 = Pattern.compile(regex3);
+           Matcher m3 = p3.matcher(pwd);
+           boolean r3 = m3.matches();
+           if (r3)
+               System.out.println("Password is Valid");
+           else
+               System.out.println("Password is Invalid");
+       }
 }
