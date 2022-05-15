@@ -76,7 +76,8 @@ public class User_validation
            Scanner scanner = new Scanner(System.in);
            System.out.print("Enter your mobile number : ");
            String pwd = scanner.nextLine();
-           String regex3 = "^[A-Z a-z 0-9]{8,}$";
+           //String regex3 = "^[A-Z a-z 0-9]{8,}$";
+           String regex3="^[A-Z]{1}+[a-z 0-9]{7,}$";
            Pattern p3 = Pattern.compile(regex3);
            Matcher m3 = p3.matcher(pwd);
            boolean r3 = m3.matches();
