@@ -40,6 +40,22 @@ public class User_validation
 			     System.out.println("Last name is !Invalid");
 		   return r;
 	}
+       
+       public static boolean validEmail()
+       {
+		    System.out.print("Enter the Email id : ");
+		    String email = scanner.next();
+		    String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
+		    Pattern p = Pattern.compile(regex);
+		    Matcher m = p.matcher(email);
+		    boolean r = m.matches();
+
+		    if (r)
+			     System.out.println("Email Id is valid");
+		    else
+			     System.out.println("Email Id is !Invalid");
+		   return r;
+	}
 
 
 }
