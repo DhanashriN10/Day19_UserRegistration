@@ -104,4 +104,14 @@ public class User_validation
            boolean r=m.matches();
            return r;
        }
+
+
+	public boolean validateEmail(String email) {
+		// TODO Auto-generated method stub
+		String regex="^[A-Za-z0-9+_.-]+@(.+)$";
+        Pattern p=Pattern.compile(regex);
+        Matcher m=p.matcher(email);
+        boolean r=m.matches();
+        return r;
+	}
 }
