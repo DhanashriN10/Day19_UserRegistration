@@ -114,4 +114,13 @@ public class User_validation
         boolean r=m.matches();
         return r;
 	}
+	
+	public boolean validateMobile(String mob) {
+		// TODO Auto-generated method stub
+		String regex="(0|91)?[7-9][0-9]{9}";
+        Pattern p=Pattern.compile(regex);
+        Matcher m=p.matcher(mob);
+        boolean r=m.matches();
+        return r;
+	}
 }
