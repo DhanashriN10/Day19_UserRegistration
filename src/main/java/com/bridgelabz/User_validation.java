@@ -132,4 +132,13 @@ public class User_validation
         boolean r=m.matches();
         return r;
 	}
+	
+	public boolean validatePassword2(String pass2) {
+		// TODO Auto-generated method stub
+		String regex="^[A-Z]{1}+[a-z 0-9]{7,}$";
+        Pattern p=Pattern.compile(regex);
+        Matcher m=p.matcher(pass2);
+        boolean r=m.matches();
+        return r;
+	}
 }
