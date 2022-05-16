@@ -150,4 +150,13 @@ public class User_validation
         boolean r=m.matches();
         return r;
 	}
+	
+	public boolean validatePassword4(String pass4) {
+		// TODO Auto-generated method stub
+		String regex="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_-])[a-zA-Z0-9].{8,}$";
+        Pattern p=Pattern.compile(regex);
+        Matcher m=p.matcher(pass4);
+        boolean r=m.matches();
+        return r;
+	}
 }
