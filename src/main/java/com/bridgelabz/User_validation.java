@@ -96,4 +96,12 @@ public class User_validation
            boolean r=m.matches();
            return r;
        }
+       
+       public boolean validateLastName(String lname) {
+           String regex="^[A-Z]{1}[a-z]{2,}$";
+           Pattern p=Pattern.compile(regex);
+           Matcher m=p.matcher(lname);
+           boolean r=m.matches();
+           return r;
+       }
 }
