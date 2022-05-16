@@ -123,4 +123,13 @@ public class User_validation
         boolean r=m.matches();
         return r;
 	}
+	
+	public boolean validatePassword1(String pass1) {
+		// TODO Auto-generated method stub
+		String regex="^[A-Z a-z 0-9]{8,}$";
+        Pattern p=Pattern.compile(regex);
+        Matcher m=p.matcher(pass1);
+        boolean r=m.matches();
+        return r;
+	}
 }
