@@ -89,6 +89,8 @@ public class User_validation
                System.out.println("Password is Invalid");
        }
        
+       
+       //Junit
        public boolean validateFirstName(String fname) {
            String regex="^[A-Z]{1}[a-z]{2,}$";
            Pattern p=Pattern.compile(regex);
@@ -159,4 +161,108 @@ public class User_validation
         boolean r=m.matches();
         return r;
 	}
+	
+	//Exception Handling
+	
+	//Exception handled for first name
+	private static final String regex = "^[A-Z]{1}[a-z]{2,}$";
+
+    public boolean validateFirstName1(String fName) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex);
+        if (Pattern.matches(regex, fName) == true)
+            return Pattern.matches(regex, fName);
+        else {
+            throw new UserRegistrationException(" First Name Should be proper");
+        }
+    }
+  //Exception handled for Last name
+    private static final String regex1 = "^[A-Z]{1}[a-z]{2,}$";
+
+    public boolean validateLastName1(String lName) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex1);
+        if (Pattern.matches(regex1, lName) == true)
+            return Pattern.matches(regex1, lName);
+        else {
+            throw new UserRegistrationException("Last Name should be proper");
+        }
+    }
+    
+  //Exception handled for email id
+    private static final String regex2 = "^[A-Za-z0-9+_.-]+@(.+)$";
+
+    public boolean validateEmail1(String email) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex1);
+        if (Pattern.matches(regex2, email) == true)
+            return Pattern.matches(regex2, email);
+        else {
+            throw new UserRegistrationException("Email id should be proper");
+        }
+    }
+    //Exception handled for mobile number
+    private static final String regex3 = "(0|91)?[7-9][0-9]{9}";
+
+    public boolean validateMobileNumber(String mobileNo) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex3);
+        if (Pattern.matches(regex3, mobileNo) == true)
+            return Pattern.matches(regex3, mobileNo);
+        else {
+            throw new UserRegistrationException("Send a proper Mobile Number");
+        }
+    }
+    
+  //Exception Handled for Password Rule 1 : throw custom exceptions in case of Invalid User Details
+
+    private static final String regex4 = "^[A-Z a-z 0-9]{8,}$";
+
+    public boolean validatePasswordRule1(String password) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex4);
+        if (Pattern.matches(regex4, password) == true)
+            return Pattern.matches(regex4, password);
+        else {
+            throw new UserRegistrationException("Enter password according to rule 1 " + "(Minimum 8 characters)");
+        }
+    }
+    
+  //Exception Handled for Password Rule 2 : throw custom exceptions in case of Invalid User Details
+
+    private static final String regex5 = "^[A-Z]{1}+[a-z 0-9]{7,}$";
+
+    public boolean validatePasswordRule2(String password) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex5);
+        if (Pattern.matches(regex5, password) == true)
+            return Pattern.matches(regex5, password);
+        else {
+            throw new UserRegistrationException("Enter password according to rule 2 " +
+                    "(Password At least Eight Character one Upper case)");
+        }
+    }
+
+    //Exception Handled for Password Rule 3 : throw custom exceptions in case of Invalid User Details
+
+    private static final String regex6 = "^[A-Z]{1}+[a-zA-Z]{6}+[0-9]+{1,}$";
+
+    public boolean validatePasswordRule3(String password) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex6);
+        if (Pattern.matches(regex6, password) == true)
+            return Pattern.matches(regex6, password);
+        else {
+            throw new UserRegistrationException("Enter password according to rule 3 " +
+                    "(Password At least one Upper case and one numeric)");
+        }
+    }
+  //Exception Handled for Password Rule 4 : throw custom exceptions in case of Invalid User Details
+
+    private static final String regex7 = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_-])[a-zA-Z0-9].{8,}$";
+
+    public boolean validatePasswordRule4(String password) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex7);
+        if (Pattern.matches(regex7, password) == true)
+            return Pattern.matches(regex7, password);
+        else {
+            throw new UserRegistrationException("Enter password according to rule 4 " +
+                    "(Password At least One Upper Case & One Numeric & One Special Character)");
+        }
+    }
+
+
 }
